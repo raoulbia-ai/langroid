@@ -46,7 +46,7 @@ def login(username: str, password: str, remember_me: bool = False) -> dict:
 def main():
     # Example usage
     username = "raoul@verodat.com"
-    password = "R@ttweiler72!"
+    password = ""
     remember_me = "y"
     
     result = login(username, password, remember_me)

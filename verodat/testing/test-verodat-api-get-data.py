@@ -113,7 +113,7 @@ def get_dataset_output(
 def main():
     # Login credentials
     username = "raoul@verodat.com"
-    password = "R@ttweiler72!"
+    password = ""
     remember_me = True
     
     # First, get the auth token

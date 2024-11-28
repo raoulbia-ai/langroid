@@ -82,7 +82,7 @@ def print_dataset_info(datasets: List[Dict]) -> None:
 def main():
     # Login credentials
     username = "raoul@verodat.com"
-    password = "R@ttweiler72!"
+    password = ""
     remember_me = True
     workspace_id = 161
     
