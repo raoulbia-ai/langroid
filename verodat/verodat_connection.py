@@ -126,3 +126,27 @@ def retrieve_data_from_dataset(
     except requests.exceptions.RequestException as e:
         print(f"Error retrieving data from dataset: {e}")
         return None
+
+def get_dataset_schema(
+    workspace_id: int,
+    dataset_id: int,
+    auth_token: str
+) -> Optional[Dict]:
+    """
+    Returns the output schema for the specified dataset within the workspace.
+    """
+    base_url = "https://verodat.io/api/v3"
+    url = f"{base_url}/workspaces/{workspace_id}/datasets/{dataset_id}/dout-schema"
+    
+    headers = {
+        "accept": "application/json",
+        "Authorization": f"Bearer {auth_token}"
+    }
+    
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching dataset schema: {e}")
+        return None
